@@ -8,6 +8,10 @@ As a user
 So that I can be warmer
 I want to be able to increase the temperature.
 
+As a user
+So that I can cool down
+I want to be able to decrease the temperature.
+
 Class     |    Properties  |  Methods
 -|-|-|
 Thermostat |  temperature | set_temperature, up, down

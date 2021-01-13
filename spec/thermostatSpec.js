@@ -19,10 +19,20 @@ describe('Thermostat', function(){
     });
   });
 
-  describe('down function', function(){ 
+  describe('down function', function(){
     it('decreases the temperature by 1 degree', function(){
       thermostat.down();
       expect(thermostat.temperature).toEqual(19)
+    });
+  });
+
+  describe('has a minimum temperature', function() {
+    it('will not go below 10', function() {
+      for (let i = 0; i < 10; i++) {
+        thermostat.down();
+      }
+      expect(function() { thermostat.down() } ).toThrow('Minimum temperature reached');
+      expect(thermostat.temperature).toEqual(10)
     });
   });
 

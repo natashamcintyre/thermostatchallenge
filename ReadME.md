@@ -12,6 +12,10 @@ As a user
 So that I can cool down
 I want to be able to decrease the temperature.
 
+As a user
+So that my pipes don't burst
+I want the thermostat to have a minimum temperature of 10
+
 Class     |    Properties  |  Methods
 -|-|-|
-Thermostat |  temperature | set_temperature, up, down
+Thermostat |  temperature, min | set_temperature, up, down

@@ -1,9 +1,13 @@
-User story 
+User story
 
 As a user
 So that I can be comfortable
-I need to have be able to have a default temp of 20 degrees c. 
+I need to have be able to have a default temp of 20 degrees c.
+
+As a user
+So that I can be warmer
+I want to be able to increase the temperature.
 
 Class     |    Properties  |  Methods
--|-|-| 
-Thermostat |  temperature | set_temperature, up, down 
+-|-|-|
+Thermostat |  temperature | set_temperature, up, down

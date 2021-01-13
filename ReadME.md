@@ -16,6 +16,14 @@ As a user
 So that my pipes don't burst
 I want the thermostat to have a minimum temperature of 10
 
+As a user
+So that I save money
+I want the thermostat to have a power saving mode
+
+As a user
+So that I save money 
+I want the power saving mode to have a max temp of 25
+
 Class     |    Properties  |  Methods
 -|-|-|
-Thermostat |  temperature, min | set_temperature, up, down
+Thermostat | powersave, temperature, min, max | set_temperature, up, down

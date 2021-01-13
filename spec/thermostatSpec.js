@@ -36,4 +36,11 @@ describe('Thermostat', function(){
     });
   });
 
+  describe('has a power saving mode', function() {
+    it('is a power saving mode with', function(){
+      thermostat.powersave_on();
+      expect(thermostat.powersave).toBe(true);
+    })
+  })
+
 });

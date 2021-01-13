@@ -9,6 +9,9 @@ class Thermostat {
   }
 
   down() {
+    if (this.temperature === 10) {
+    throw "Minimum temperature reached"
+    }
     -- this.temperature
   }
 

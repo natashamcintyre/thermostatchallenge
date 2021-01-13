@@ -49,9 +49,19 @@ describe('Thermostat', function(){
       for (let i = 0; i < 5; i++) {
         thermostat.up();
       }
-      expect(function() { thermostat.up() } ).toThrow("Maximum temperature reached.");
+      expect(function() { thermostat.up() } ).toThrow("Maximum powersave temperature reached.");
       expect(thermostat.temperature).toEqual(25)
     });
   });
+
+  describe('maximum temperature', function(){
+    it ('has a max temp of 32', function(){
+      for (let i = 0; i < 12; i++) {
+        thermostat.up() 
+      }
+      expect(function() {thermostat.up() } ).toThrow("Maximum temperature reached.");
+      expect(thermostat.temperature).toEqual(32)
+    })
+  })
 
 });

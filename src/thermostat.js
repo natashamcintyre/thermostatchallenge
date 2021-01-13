@@ -9,8 +9,11 @@ class Thermostat {
   }
 
   up() {
-    if (this.temperature === this.powersavemax) {
+    if (this.powersavemode === true && this.temperature === this.powersavemax) {
       throw "Maximum powersave temperature reached."
+    }
+    else if (this.temperature === this.max) {
+      throw "Maximum temperature reached."
     }
     ++ this.temperature
   }

@@ -1,7 +1,8 @@
 class Thermostat {
 
   constructor() {
-    this.temperature = 20
+    this.temperature = 20;
+    // this.powersavemode = false;
   }
 
   up() {
@@ -13,6 +14,12 @@ class Thermostat {
     throw "Minimum temperature reached"
     }
     -- this.temperature
+  }
+
+  powersave(instruction) {
+    if (instruction === 'on') {
+      this.powersavemode = true;
+    }
   }
 
 }

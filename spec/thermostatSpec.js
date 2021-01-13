@@ -38,9 +38,20 @@ describe('Thermostat', function(){
 
   describe('has a power saving mode', function() {
     it('is a power saving mode with', function(){
-      thermostat.powersave_on();
-      expect(thermostat.powersave).toBe(true);
+      thermostat.powersave('on');
+      expect(thermostat.powersavemode).toBe(true);
     })
   })
+
+  describe('powersaving mode', function() {
+    it('has a max temp of 25', function() {
+      thermostat.powersave('on');
+      for (let i = 0; i < 5; i++) {
+        thermostat.up();
+      }
+      expect(function() { thermostat.up() } ).toThrow("Maximum temperature reached.");
+      expect(thermostat.temperature).toEqual(25)
+    });
+  });
 
 });

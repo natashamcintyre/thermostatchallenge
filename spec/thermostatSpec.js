@@ -86,14 +86,18 @@ describe('Thermostat', function(){
   });
 
   describe('energy usage', function() {
-    it('should show low energy usage', function() {
+    it('should show low energy usage below 18°C', function() {
       thermostat.temperature = 17
       expect(thermostat.energyUsage()).toBe('Low-usage')
     });
 
-    it('should show medium usage for 18 to 25', function() {
+    it('should show medium usage for 18°C to 25°C', function() {
       expect(thermostat.energyUsage()).toBe('Medium-usage');
+    }); 
+
+    it('should show high usage for 26°C and above', function() {
+      thermostat.temperature = 27 
+      expect(thermostat.energyUsage()).toBe('High-usage')
     });
   });
-
 });

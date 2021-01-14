@@ -8,7 +8,12 @@
   </head>
   <body>
     <header>
-      <h2 id="temperature">Target Temperature</h2>
+      <div class="header_item">
+        <h2 id="temperature">Target Temperature</h2>
+      </div>
+      <div class="header_item">
+        <h3 id="error_message">Space for error message</h3>
+      </div>
     </header>
 
     <div class="buttons">
@@ -26,15 +31,20 @@
     <div class="powersaving">
       <div class="powersaving_items">
         <button id="powermodeon">Turn Power Saving Mode On</button>
+        <h4 id="powermodeonindicator">Colour</h4>
       </div>
       <div class="powersaving_items">
         <button id="powermodeoff">Turn Power Saving Mode Off</button>
+        <h4 id="powermodeoffindicator">Colour</h4>
       </div>
     </div>
 
-    <footer>
-      <div class="energyusage">
+    <footer class="energyusage">
+      <div class="energyusage_items">
         <button id="energyusage_button">Current Energy Usage</button>
+      </div>
+      <div class="energyusage_items">
+        <h3 id="energyusage_indicator">Energy Usage Displayed</h3>
       </div>
     </footer>
   </body>

@@ -23,6 +23,10 @@ class Thermostat {
       throw "Minimum temperature reached"
     }
     -- this.temperature
+  } 
+
+  reset() {
+    this.temperature = 20
   }
 
   powersave(instruction) {
@@ -35,3 +39,5 @@ class Thermostat {
   }
 
 }
+
+let newThermostat = new Thermostat

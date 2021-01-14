@@ -36,6 +36,11 @@ As a user
 So that I can quickly return to an ambient temperature
 I would like to quickly reset the temperature to 20 degrees c
 
+As a user 
+So I know how much energy I am currenty using  
+I would like a message shown to me. e.g. low usage
+
+
 Class     |    Properties  |  Methods
 -|-|-|
 Thermostat | powersave, temperature, min, max | set_temperature, up, down

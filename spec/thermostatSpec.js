@@ -83,6 +83,15 @@ describe('Thermostat', function(){
       thermostat.reset();
       expect(thermostat.temperature).toEqual(20);
     });
+  }); 
+
+  describe('energy usage', function() { 
+    it('should show low energy usage', function() {
+      thermostat.temperature = 17
+      expect(thermostat.energyUsage()).toBe('Low-usage')
+    });
+  
   });
 
 });
+

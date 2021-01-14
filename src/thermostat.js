@@ -23,7 +23,7 @@ class Thermostat {
       throw "Minimum temperature reached"
     }
     -- this.temperature
-  } 
+  }
 
   reset() {
     this.temperature = 20
@@ -35,6 +35,12 @@ class Thermostat {
     }
     else if (instruction === 'off') {
       this.powersavemode = false;
+    }
+  }
+
+  energyUsage() {
+    if (this.temperature < 18) {
+      return 'Low-usage';
     }
   }
 

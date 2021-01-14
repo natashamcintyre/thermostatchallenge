@@ -2,24 +2,21 @@ class Thermostat {
 
   constructor() {
     this.temperature = 20;
-    this.min = 10;
-    this.max = 32;
-    this.powersavemax = 25;
+    this.MIN = 10;
+    this.MAX = 32;
+    this.POWERSAVEMAX = 25;
     this.powersavemode = true;
   }
 
   up() {
-    if (this.powersavemode === true && this.temperature === this.powersavemax) {
-      throw "Maximum powersave temperature reached."
-    }
-    else if (this.temperature === this.max) {
+    if (this.isMaxTemperature()) {
       throw "Maximum temperature reached."
     }
     ++ this.temperature
   }
 
   down() {
-    if (this.temperature === this.min) {
+    if (this.temperature === this.MIN) {
       throw "Minimum temperature reached"
     }
     -- this.temperature
@@ -27,6 +24,10 @@ class Thermostat {
 
   reset() {
     this.temperature = 20
+  }
+
+  isPowerSaveModeOn() {
+    return this.powersavemode === true;
   }
 
   powersave(instruction) {
@@ -38,11 +39,20 @@ class Thermostat {
     }
   }
 
+  isMaxTemperature() {
+    if (this.isPowerSaveModeOn()) {
+      return this.temperature === this.POWERSAVEMAX;
+    }
+    return this.temperature === this.MAX;
+  }
+
   energyUsage() {
     if (this.temperature < 18) {
       return 'Low-usage';
-    } else if (this.temperature >= 18 && this.temperature <= 25) {
+    } else if (this.temperature <= 25) {
       return 'Medium-usage'
+    } else {
+      return 'High-usage'
     }
   }
 

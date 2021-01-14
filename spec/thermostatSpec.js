@@ -59,10 +59,21 @@ describe('Thermostat', function(){
       for (let i = 0; i < 5; i++) {
         thermostat.up();
       }
-      expect(function() { thermostat.up() } ).toThrow("Maximum powersave temperature reached.");
+      expect(function() { thermostat.up() } ).toThrow("Maximum temperature reached.");
       expect(thermostat.temperature).toEqual(25)
     });
   });
+
+  describe('isPowerSaveModeOn', function() {
+    it('returns true if on', function() {
+      expect(thermostat.isPowerSaveModeOn()).toBe(true);
+    });
+
+    it('returns false when off', function() {
+      thermostat.powersave('off');
+      expect(thermostat.isPowerSaveModeOn()).toBe(false);
+    });
+  })
 
   describe('maximum temperature', function(){
     it ('has a max temp of 32', function(){
@@ -93,10 +104,10 @@ describe('Thermostat', function(){
 
     it('should show medium usage for 18°C to 25°C', function() {
       expect(thermostat.energyUsage()).toBe('Medium-usage');
-    }); 
+    });
 
     it('should show high usage for 26°C and above', function() {
-      thermostat.temperature = 27 
+      thermostat.temperature = 27
       expect(thermostat.energyUsage()).toBe('High-usage')
     });
   });

@@ -21,12 +21,20 @@ So that I save money
 I want the thermostat to have a power saving mode
 
 As a user
-So that I save money 
+So that I save money
 I want the power saving mode to have a max temp of 25
 
-As a user 
+As a user
 So that I don't overheat
 I want the maximum temperature to be 32
+
+As a user
+So that I save power straight away
+I want power save mode to be on by default
+
+As a user
+So that I can quickly return to an ambient temperature
+I would like to quickly reset the temperature to 20 degrees c
 
 Class     |    Properties  |  Methods
 -|-|-|

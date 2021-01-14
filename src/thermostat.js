@@ -5,7 +5,7 @@ class Thermostat {
     this.min = 10;
     this.max = 32;
     this.powersavemax = 25;
-    // this.powersavemode = false;
+    this.powersavemode = true;
   }
 
   up() {
@@ -20,7 +20,7 @@ class Thermostat {
 
   down() {
     if (this.temperature === this.min) {
-    throw "Minimum temperature reached"
+      throw "Minimum temperature reached"
     }
     -- this.temperature
   }
@@ -28,6 +28,9 @@ class Thermostat {
   powersave(instruction) {
     if (instruction === 'on') {
       this.powersavemode = true;
+    }
+    else if (instruction === 'off') {
+      this.powersavemode = false;
     }
   }
 

@@ -12,6 +12,12 @@ describe('Thermostat', function(){
     });
   });
 
+  describe('power save mode is on by default', function() {
+    it ('immediately sets powersave mode to true', function() {
+      expect(thermostat.powersavemode).toBe(true);
+    });
+  });
+
   describe('up function', function() {
     it ('increases the temperature by 1 degree', function() {
       thermostat.up();
@@ -37,15 +43,19 @@ describe('Thermostat', function(){
   });
 
   describe('has a power saving mode', function() {
-    it('is a power saving mode with', function(){
+    it('that can be turned on', function(){
       thermostat.powersave('on');
       expect(thermostat.powersavemode).toBe(true);
-    })
-  })
+    });
+
+    it('that can be turned off', function() {
+      thermostat.powersave('off');
+      expect(thermostat.powersavemode).toBe(false);
+    });
+  });
 
   describe('powersaving mode', function() {
     it('has a max temp of 25', function() {
-      thermostat.powersave('on');
       for (let i = 0; i < 5; i++) {
         thermostat.up();
       }
@@ -56,12 +66,23 @@ describe('Thermostat', function(){
 
   describe('maximum temperature', function(){
     it ('has a max temp of 32', function(){
+      thermostat.powersave('off');
       for (let i = 0; i < 12; i++) {
-        thermostat.up() 
+        thermostat.up()
       }
       expect(function() {thermostat.up() } ).toThrow("Maximum temperature reached.");
       expect(thermostat.temperature).toEqual(32)
-    })
-  })
+    });
+  });
+
+  describe('reset', function() {
+    it('immediately sets the temperature to 20', function() {
+      for (let i = 0; i < 3; i++) {
+        thermostat.up();
+      }
+      thermostat.reset();
+      expect(thermostat.temperature).toEqual(20);
+    });
+  });
 
 });

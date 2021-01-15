@@ -54,4 +54,8 @@ $(document).ready(function() {
     }, 3000);
   })
 
+  $.get( "https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=213004ef262707852d5a0ed4637f11e0&units=metric", function(response) {
+    $('#today_temperature').text(response.main.temp + '°C');
+  })
+
 })

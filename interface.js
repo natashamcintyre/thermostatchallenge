@@ -4,11 +4,16 @@ $(document).ready(function() {
   $('#powermodeindicator').css('color','green');
 
   function updateTemperature() {
-    $('#temperature').text(thermostat.temperature);
+    $('#temperature').text(thermostat.temperature + '°C');
   }
 
   function updateErrorMessage() {
-    $('#error_message').text(thermostat.error_message)
+    $('#error_message').text(thermostat.error_message);
+    $('#error_message').show('fast', function() {
+      setTimeout(function() {
+        $('#error_message').hide();
+      }, 2000);
+    });
   }
 
   $('#up').click(function() {
@@ -30,13 +35,13 @@ $(document).ready(function() {
 
   $('#powermodeon').click(function() {
     thermostat.powersave('on');
-    $('#powermodeindicator').text('ON')
+    $('#powermodeindicator').text('Power Saving Mode ON')
     $('#powermodeindicator').css('color','green');
   })
 
   $('#powermodeoff').click(function() {
     thermostat.powersave('off');
-    $('#powermodeindicator').text('OFF')
+    $('#powermodeindicator').text('Power Saving Mode OFF')
     $('#powermodeindicator').css('color','red');
   })
 
@@ -46,7 +51,7 @@ $(document).ready(function() {
     $('#energyusage_indicator').show();
     setTimeout(function() {
       $('#energyusage_indicator').hide();
-    }, 4000);
+    }, 3000);
   })
 
 })

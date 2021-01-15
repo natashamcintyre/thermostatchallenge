@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" name="viewport" content="width=device-width">
     <title></title>
     <link rel="stylesheet" href="index.css">
     <script src="src/thermostat.js"></script>
@@ -9,36 +9,38 @@
   <body>
     <script src="jquery.js"></script>
     <script src="interface.js"></script>
-    <script> 'code might go here??' </script>
     <header>
       <div class="header_item">
         <h1 id="temperature"></h1>
       </div>
       <div class="error_message_space">
-        <h3 id="error_message">Space for error message</h3>
+        <h3 id="error_message"></h3>
       </div>
     </header>
 
     <div class="buttons">
       <div class="buttons_items">
-        <button id="up">+</button>
+        <button class="buttons_items" id="up">+</button>
       </div>
       <div class="buttons_items">
-        <button id="down">-</button>
+        <button class="buttons_items" id="down">-</button>
       </div>
       <div class="buttons_items">
-        <button id="reset">Reset</button>
+        <button class="buttons_items" id="reset">Reset</button>
       </div>
     </div>
 
     <div class="powersaving">
       <div class="powersaving_items">
         <button id="powermodeon">Turn Power Saving Mode On</button>
-        <h4 id="powermodeindicator">ON</h4>
       </div>
       <div class="powersaving_items">
         <button id="powermodeoff">Turn Power Saving Mode Off</button>
       </div>
+    </div>
+
+    <div class="powersavingindicator">
+      <h4 id="powermodeindicator">Power Saving Mode ON</h4>
     </div>
 
     <footer class="energyusage">

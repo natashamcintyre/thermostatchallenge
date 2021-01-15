@@ -1,0 +1,62 @@
+body {
+  background-color: blanchedalmond;
+}
+
+header {
+  height: 200px;
+  padding: 10px;
+  margin: auto;
+  background-color: lightblue;
+  align-items: center;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 70px;
+}
+
+.Low-usage {
+  color: green;
+}
+
+.Medium-usage {
+  color: orange;
+}
+
+.High-usage {
+  color: red;
+}
+
+.buttons {
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: auto;
+  padding: 10px;
+}
+
+.buttons_items {
+  width: 80px;
+  height: 50px;
+  font-size: 30px;
+}
+
+#reset {
+  width: 120px;
+  font-size: 30px;
+}
+
+.powersaving {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.powersavingindicator {
+  text-align: center;
+}
+
+.energyusage {
+  text-align: center;
+}

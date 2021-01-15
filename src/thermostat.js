@@ -11,6 +11,7 @@ class Thermostat {
 
   up() {
     if (this.isMaxTemperature()) {
+      // throw "Maximum temperature reached."
       this.error_message = "Maximum temperature reached."
       return
     }

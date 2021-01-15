@@ -111,4 +111,5 @@ describe('Thermostat', function(){
       expect(thermostat.energyUsage()).toBe('High-usage')
     });
   });
+
 });

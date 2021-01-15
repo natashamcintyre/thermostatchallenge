@@ -6,19 +6,24 @@ class Thermostat {
     this.MAX = 32;
     this.POWERSAVEMAX = 25;
     this.powersavemode = true;
+    this.error_message
   }
 
   up() {
     if (this.isMaxTemperature()) {
-      throw "Maximum temperature reached."
+      this.error_message = "Maximum temperature reached."
+      return
     }
+    this.error_message = ""
     ++ this.temperature
   }
 
   down() {
     if (this.temperature === this.MIN) {
-      throw "Minimum temperature reached"
+      this.error_message = "Minimum temperature reached"
+      return
     }
+    this.error_message = ""
     -- this.temperature
   }
 
@@ -57,5 +62,3 @@ class Thermostat {
   }
 
 }
-
-let newThermostat = new Thermostat

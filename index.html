@@ -8,12 +8,13 @@
   </head>
   <body>
     <script src="jquery.js"></script>
+    <script src="interface.js"></script>
     <script> 'code might go here??' </script>
     <header>
       <div class="header_item">
-        <h2 id="temperature">Target Temperature</h2>
+        <h1 id="temperature"></h1>
       </div>
-      <div class="header_item">
+      <div class="error_message_space">
         <h3 id="error_message">Space for error message</h3>
       </div>
     </header>
@@ -33,20 +34,19 @@
     <div class="powersaving">
       <div class="powersaving_items">
         <button id="powermodeon">Turn Power Saving Mode On</button>
-        <h4 id="powermodeonindicator">Colour</h4>
+        <h4 id="powermodeindicator">ON</h4>
       </div>
       <div class="powersaving_items">
         <button id="powermodeoff">Turn Power Saving Mode Off</button>
-        <h4 id="powermodeoffindicator">Colour</h4>
       </div>
     </div>
 
     <footer class="energyusage">
       <div class="energyusage_items">
-        <button id="energyusage_button">Current Energy Usage</button>
+        <button id="energyusage_button">Current Energy Usage:</button>
       </div>
       <div class="energyusage_items">
-        <h3 id="energyusage_indicator">Energy Usage Displayed</h3>
+        <h3 id="energyusage_indicator"></h3>
       </div>
     </footer>
   </body>
